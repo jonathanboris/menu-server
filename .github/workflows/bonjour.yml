@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - run: README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
