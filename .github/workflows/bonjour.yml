@@ -2,7 +2,7 @@ name: Bonjour
 on:
   - push
 jobs:
-  dire_bonjour:
+  artefact:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
