@@ -3,6 +3,8 @@ on:
   - push
 jobs:
   dire_bonjour:
-    runs-on: ubuntu-22.04
-    steps:
-      - run: echo "Bonjour 👋"
+
+      runs-on: ubuntu-22.04
+      steps:
+        - run: ls -l # Liste les fichier du répertoire courant
+        - run: cat README.md
