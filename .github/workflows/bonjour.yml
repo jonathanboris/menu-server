@@ -4,13 +4,12 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user=root
     steps:
-      - uses: actions/checkout@v3 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
-      - run: |
-          sudo apt-get update
-          sudo apt-get install -y cowsay
-      - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - name: output readme
+        id: cowsay_readme
+        uses: Code-Hex/neo-cowsay-action@v1
+        with:
+         path: ./README.md
+      - name: print output
+        run: |
+            echo "${{ steps.cowsay_readme.outputs.cowsay }}"
