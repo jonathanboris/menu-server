@@ -9,7 +9,16 @@ jobs:
       options: --user=root
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          mvn -v
+      - uses: actions/setup-java@v3
+        with:
+           distribution: 'temurin'
+           java-version: '17'
+      - run: java HelloWorldApp.java
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+           maven-version: 3.8.2
+      - run: mvn -v
+
 
          
