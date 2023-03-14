@@ -8,4 +8,4 @@ jobs:
       - uses: actions/checkout@v3 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
       - run: sudo apt-get install -y cowsay
       - run: ls -l # Liste les fichier du répertoire courant
-      - run: README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
