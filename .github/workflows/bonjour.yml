@@ -5,11 +5,14 @@ jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v3
+      - name: Read readme.md
+        id: readme
+        uses: juliangruber/read-file-action@v1
+        with:
+           path: ./README.md
       - name: output readme
         id: cowsay_readme
         uses: Code-Hex/neo-cowsay-action@v1
         with:
-         path: ./README.md
-      - name: print output
-        run: |
-            echo "${{ steps.cowsay_readme.outputs.cowsay }}"
+         message: ${{ steps.readme.outputs.content }}
