@@ -13,12 +13,14 @@ jobs:
         with:
            distribution: 'temurin'
            java-version: '17'
-      - run: java HelloWorldApp.java
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
            maven-version: 3.8.2
-      - run: mvn -v
+      - run: |
+           mvn -v
+           mvn compile
+           mvn package
 
 
          
