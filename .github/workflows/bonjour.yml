@@ -1,6 +1,7 @@
 name: Bonjour
 on:
   - push
+  - pull_request
 jobs:
   artefact:
     runs-on: ubuntu-22.04
