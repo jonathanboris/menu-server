@@ -36,7 +36,7 @@ public class Dish {
 
   @ManyToMany(mappedBy = "dishes")
   @EqualsAndHashCode.Exclude
-  private Set<Menu> menus
+  private Set<Menu> menus;
 
   public Dish(Long id, String name, Set<Menu> menus) {
     this.id = id;
