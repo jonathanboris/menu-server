@@ -15,10 +15,16 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
            maven-version: 3.8.2
-      - run: |
-           mvn -v
-           mvn compile
-           mvn package
+      - name: verif version
+        run: mvn -v
+      - name: maven compile
+        run: mvn compile
+      - name: maven package
+        run: mvn package
+      - name: maven test
+        run: mvn test
+      - name: maven IT
+        run: mvn verify -DskipUnitTests=true
 
 
          
