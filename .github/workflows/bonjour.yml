@@ -19,6 +19,8 @@ jobs:
            mvn -v
            mvn compile
            mvn package
+           mvn test
+           mvn verify -DskipUnitTests=true
 
 
          
